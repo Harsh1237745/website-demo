@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Now - Techify Product Catalog</title>
+    
+    <link rel="stylesheet" href="CSS/shop.css">
+    <link rel="stylesheet" href="CSS/style.css"> 
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Header section-->
+    <div class="contact-banner" id="shop-banner">
+        
+        <div class="navbar">
+            <img src="Icons/logo.png" class="logo" alt="Techify Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="shop.html" class="active">Shop Now</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    
+    <!-- Animated inside the header section text-->
+    <div class="content">
+            <h1>Product Catalogue</h1>
+            <p>Explore our wide range of smart devices products.</p>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- Side bar section-->
+        <div class="side">
+            <h3 class="side-title">Filters & Sorts</h3>
+            
+            <!-- Search - sidebar-->
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="Search products" class="search-input">
+                <button id="search-button" class="search-btn">Search</button>
+            </div>
+            
+            <!-- Sort section - sidebar-->
+            <div class="sort-section"> 
+                <h4>Sort By Price</h4>
+                <button class="sort active" data-sort="default">Default</button> 
+                <button class="sort" data-sort="high-to-low">Highest to Lowest</button> 
+                <button class="sort" data-sort="low-to-high">Lowest to Highest</button> 
+            </div>
+            
+            <!-- Filter section - sidebar-->
+            <div class="filter-section"> 
+                <h4>Filter By Category</h4>
+                <button class="filter active" data-filter="all">All Devices</button> 
+                <button class="filter" data-filter="smartphone">Smartphone</button> 
+                <button class="filter" data-filter="smartwatch">Smartwatch</button> 
+                <button class="filter" data-filter="wireless-earbuds">Wireless Earbuds</button> 
+            </div>
+        </div>
+
+        <!-- Product section to display on the left-->
+        <div class="product-content-area">
+            <div class="product-grid" id="product-list">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="JS/shop.js"></script>
+    <script>
+        // Animating background images on the banner
+        const images = [
+            "Images/shop1.jpg",
+            "Images/shop2.jpg",
+            "Images/shop3.jpg",
+            "Images/shop4.jpg" 
+        ];
+        
+        const banner = document.getElementById("shop-banner");
+        let index = 0;
+
+        function changeBackground() {
+            // This is for the animation image
+            banner.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[index]}')`;
+            index++;
+            if(index >= images.length) index = 0;
+        }
+
+        changeBackground();
+        setInterval(changeBackground, 2500);
+    </script>
+</body>
+</html>

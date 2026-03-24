@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Techify</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- Header section-->
+    <div class="about-banner" id="about-banner">
+        <div class="navbar">
+            <img src="Icons/logo.png" class="logo" alt="Techify Logo">
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="shop.html">Shop Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!--Info section-->
+        <div class="content">
+            <h1>About Techify</h1>
+            <p>
+                The foundation of Techify started in 2009 by two researchers, including Harshit Waghmare, who discovered the Principle of Smart Power. 
+                <br>This principle showed that technology could be powerful without wasting massive amounts of energy.<br>
+            </p>
+        </div>
+    </div>
+
+    <!-- Mission section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <div class="mission-text">
+                <h3>Our Mission</h3>
+                <p>We are driven by a simple mission: to deliver innovative and high-quality tech products that genuinely enhance your daily life. We believe the future of technology should be accessible to everyone, not just the experts.</p>
+                <p>That's why our focus is always on reliability and thoughtful design. We select and create products that are simple to use, built to last, and offer true value, ensuring the technology you buy just works.</p>
+            </div>
+            <div class="mission-image">
+                <img src="Images/mission.jpg" alt="Techify mission image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision section -->
+    <section class="vision-section">
+        <div class="vision-image">
+            <img src="Images/vision.jpg" alt="Techify vision image">
+        </div>
+        <div class="vision-text">
+            <h3>Our Vision</h3>
+            <p>To be the leading and most trusted source for smart, reliable technology. We see a future where our thoughtfully designed devices make life easier and better for every customer.</p>
+            <p>We aim to connect homes and lives seamlessly, making Techify the first choice for simple, future-forward electronics around the world.</p>
+        </div>
+    </section>
+
+    <!-- Values section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <div class="mission-text">
+                <h3>Our Values</h3>
+                <p>We focus on three main things: Keep it Simple, Be Honest, and Help You Do More. 
+                    We work hard to make our technology easy to use (Simple). 
+                    We promise to be open and upfront about everything we do (Honest). 
+                    Most importantly, we want our products to truly make your life better (Help You Do More).</p>
+            </div>
+
+            <div class="mission-image">
+                <img src="Images/values.jpg" alt="Techify values image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated images section-->
+    <script>
+
+// This is the number of images will be used for this webpage
+        const images = [
+            "Images/about1.jpg",
+            "Images/about2.jpg",
+            "Images/about3.jpg",
+            "Images/about4.jpg"
+        ];
+
+        let index = 0; // This is a code that 'index' is our counter.
+        
+        const banner = document.getElementById("about-banner"); // This is the banner(for the animation) in the heading(top right page)
+
+        function changeBackground() {
+            // This is the colour of the banner image
+            banner.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${images[index]}')`; 
+            index++;
+            // If the index is greater or equal to image length then the index is equal to 0
+            if(index >= images.length) index = 0; 
+        }
+
+        // This will change the background of the home webpage
+        changeBackground();
+
+        // This will change the background of the home webpage every 2.5 seconds. 
+        // seconds are represents as 1 second = 1000 - that's an example
+        setInterval(changeBackground, 2500); 
+    </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Header section-->
+    <div class="banner" id="banner">
+        <div class="navbar">
+            <img src="Icons/logo.png" class="logo" alt="Techify Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="shop.html">Shop Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Header inside the image text section-->
+        <div class="content">
+            <h1>READY TO UPGRADE?</h1>
+            <p>Find your next device. 
+                <br>Compare our best tech and shop your style.</p>
+            <div>
+                <button class="button" type="button" onclick="window.location.href='shop.html'"><span></span>VIEW CATALOGUE</button>
+            </div>
+        </div>
+        </div>
+
+    <!-- Animated images section-->
+    <script>
+
+        // This is the number of images will be used for this webpage
+        const images = [
+            "Images/index1.jpg",
+            "Images/index2.jpg",
+            "Images/index3.jpg",
+            "Images/index4.jpg"
+        ];
+
+        let index = 0; // This is a code that 'index' is our counter.
+        const banner = document.getElementById("banner"); // This is the banner(for the animation) in the heading(top right page)
+
+        function changeBackground() {
+            banner.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${images[index]}')`; // This is the colour of the banner image
+            index++;
+            if(index >= images.length) index = 0; // If the index is greater or equal to image length then the index is equal to 0
+        }
+
+        // This will change the background of the home webpage
+        changeBackground();
+
+        // This will change the background of the home webpage every 2.5 seconds. 
+        setInterval(changeBackground, 2500); //seconds are represents as 1 second = 1000 - that's an example
+    </script>
+    
+</body>
+</html>
